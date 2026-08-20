@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #f0ebe0;
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(212, 160, 73, 0.3);
+    color: #f8f5ee;
+  }
+}
+
+@layer utilities {
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .blueprint-grid {
+    background-image:
+      linear-gradient(rgba(212, 160, 73, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 160, 73, 0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .blueprint-grid-fine {
+    background-image:
+      linear-gradient(rgba(212, 160, 73, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(212, 160, 73, 0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .glass {
+    background: rgba(17, 17, 17, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(240, 235, 224, 0.06);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #edca7a 0%, #d4a049 50%, #b8843a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .scrollbar-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .form-input {
+    width: 100%;
+    background: rgba(26, 26, 26, 0.6);
+    border: 1px solid rgba(240, 235, 224, 0.1);
+    border-radius: 8px;
+    padding: 0.7rem 0.9rem;
+    color: #f0ebe0;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .form-input::placeholder {
+    color: rgba(240, 235, 224, 0.3);
+  }
+  .form-input:focus {
+    outline: none;
+    border-color: rgba(212, 160, 73, 0.5);
+    background: rgba(26, 26, 26, 0.9);
+  }
+  .form-input option {
+    background: #111111;
+    color: #f0ebe0;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4a049;
+}
+
+/* Hide default cursor on desktop for custom cursor */
+@media (hover: hover) and (pointer: fine) {
+  .cursor-none-desktop {
+    cursor: none;
+  }
+}
